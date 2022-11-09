@@ -31,23 +31,23 @@ public class CheckingAccountTests {
     public void testPay() {
         // given:
 
-        int sum = 20000, expected = 280000;
+        int sum = 20000;
+        int expected = 280000;
 
         // when:
         int result = checkingAccount.pay(sum);
 
         // then:
         Assertions.assertEquals(expected, result);
-
-
     }
 
     @Test
     public void testTransfer() {
 
         // given:
-        int sum = 10000, expected = 290000;
-        account = new CreditAccount(10000, "Кредитный счет");
+        int sum = 10000;
+        int expected = 290000;
+        account = new CreditAccount(sum, "Кредитный счет");
 
         // when:
         int result = checkingAccount.transfer(account, sum);
